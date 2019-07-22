@@ -1,2 +1,0 @@
-# lib_detect_encoding
-lib_detect_encoding
