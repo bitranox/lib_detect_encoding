@@ -49,8 +49,8 @@ setup(
     author='Robert Nowotny',
     author_email='rnowotny1966@gmail.com',
     url='https://github.com/bitranox/lib_detect_encoding',
-    packages=['lib_list'],
+    packages=['lib_detect_encoding'],
     install_requires=['pytest', 'typing'],
     classifiers=CLASSIFIERS,
     setup_requires=['pytest-runner'],
-    tests_require=['pytest'])
+    tests_require=['pytest', 'lib_platform'])
