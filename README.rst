@@ -19,7 +19,7 @@ lib_detect_encoding
    :target: https://bettercodehub.com/results/bitranox/lib_detect_encoding
 .. |snyk security| image:: https://snyk.io/test/github/bitranox/lib_detect_encoding/badge.svg
    :target: https://snyk.io/test/github/bitranox/lib_detect_encoding
-.. |code climate| image:: https://api.codeclimate.com/v1/badges/64c43749ac6b4c52478d/maintainability
+.. |code climate| image:: https://api.codeclimate.com/v1/badges/7d130ff52f3b507552ad/maintainability
    :target: https://codeclimate.com/github/bitranox/lib_detect_encoding/maintainability
    :alt: Maintainability
 
