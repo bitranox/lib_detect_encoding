@@ -48,8 +48,8 @@ def get_encoding_linux() -> str:
 
 def get_encoding_windows() -> str:
     """
-    >>> get_encoding_windows()
-    'cp850'
+    >>> my_encoding = get_encoding_windows()
+    >>> assert my_encoding == 'cp850' or my_encoding == 'utf8'
     """
 
     # you might add more encodings, see https://docs.python.org/2.4/lib/standard-encodings.html
