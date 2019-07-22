@@ -6,7 +6,7 @@ import sys
 
 
 def install(package):
-    subprocess.call([sys.executable, "-m", "pip", "install", "--upgrade", '-r', package])
+    subprocess.call([sys.executable, "-m", "pip", "install", "--upgrade", package])
 
 
 try:
@@ -25,7 +25,7 @@ CLASSIFIERS = [
     'Topic :: Software Development :: Libraries :: Python Modules'
 ]
 
-description = 'Decoding'
+description = 'Detect Encoding'
 
 dirname = os.path.dirname(__file__)
 readme_filename = os.path.join(dirname, 'README.rst')
@@ -53,4 +53,4 @@ setup(
     install_requires=['pytest', 'typing'],
     classifiers=CLASSIFIERS,
     setup_requires=['pytest-runner'],
-    tests_require=['pytest', 'lib_platform'])
+    tests_require=['pytest'])
