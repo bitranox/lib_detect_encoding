@@ -23,6 +23,11 @@ logger = logging.getLogger()
 
 
 def detect_encoding(raw_bytes) -> str:
+    """
+    >>> assert detect_encoding(b'') is not None
+    >>> assert detect_encoding(b'x') is not None
+    >>> assert len(detect_encoding(b'x')) > 0
+    """
     detected = chardet.detect(raw_bytes)
     encoding = detected['encoding']
     confidence = detected['confidence']
@@ -78,13 +83,10 @@ def get_encoding_windows() -> str:
     if lib_platform.is_platform_windows_wine:   # no chcp command on wine
         logger.warning('assume wine encoding cp850')
         chcp_response = '850'
-    elif sys.version_info < (3, 7):
+    else:
         my_process = subprocess.Popen(['chcp'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         stdout, stderr = my_process.communicate()
         chcp_response = stdout.decode(os_encoding)
-    else:
-        completed_process = subprocess.run('chcp', shell=True, capture_output=True)  # only python 3.7 and above
-        chcp_response = completed_process.stdout.decode(os_encoding)
 
     for encoding_number, encoding in encodings:
         if encoding_number in chcp_response:
