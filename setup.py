@@ -54,8 +54,7 @@ setup(
     long_description_content_type='text/x-rst',
     author='Robert Nowotny',
     author_email='rnowotny1966@gmail.com',
-    classifiers=CLASSIFIERS,
-    )
+    classifiers=CLASSIFIERS)
 
 # install_requires: what other distributions need to be installed when this one is.
 # setup_requires: what other distributions need to be present in order for the setup script to run

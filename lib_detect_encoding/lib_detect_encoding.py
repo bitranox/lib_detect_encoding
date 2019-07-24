@@ -5,13 +5,13 @@ import platform
 import subprocess
 
 # EXTLIB
-import chardet
+import chardet   # type: ignore
 
 # OWNLIB
 import lib_platform
 
 
-def _disable_chardet_confidence_logging():
+def _disable_chardet_confidence_logging() -> None:
     logging.getLogger('chardet.charsetprober').setLevel(logging.INFO)
     logging.getLogger('chardet.universaldetector').setLevel(logging.INFO)
 
@@ -21,14 +21,14 @@ _disable_chardet_confidence_logging()
 logger = logging.getLogger()
 
 
-def detect_encoding(raw_bytes) -> str:
+def detect_encoding(raw_bytes: bytes) -> str:
     """
     >>> assert detect_encoding(b'') is not None
     >>> assert detect_encoding(b'x') is not None
     >>> assert len(detect_encoding(b'x')) > 0
     """
     detected = chardet.detect(raw_bytes)
-    encoding = detected['encoding']
+    encoding = str(detected['encoding'])
     confidence = detected['confidence']
     # locale.getpreferredencoding sometimes reports cp1252, but is cp850, so check with chcp
     if confidence < 0.95:
