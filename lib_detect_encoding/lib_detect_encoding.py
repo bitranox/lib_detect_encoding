@@ -3,7 +3,6 @@ import locale
 import logging
 import platform
 import subprocess
-import sys
 
 # EXTLIB
 import chardet

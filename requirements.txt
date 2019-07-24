@@ -1,4 +1,4 @@
+chardet                                                           # see : https://pypi.org/project/chardet/
 pytest                                                            # see : https://github.com/pytest-dev/pytest
 typing                                                            # see : https://pypi.org/project/typing/
 https://github.com/bitranox/lib_platform/archive/master.zip       # see : https://github.com/bitranox/lib_platform
-chardet
