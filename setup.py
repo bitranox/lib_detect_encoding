@@ -43,14 +43,21 @@ install('https://github.com/bitranox/lib_platform/archive/master.zip')
 setup(
     name='lib_detect_encoding',
     version='0.0.1',
+    url='https://github.com/bitranox/lib_detect_encoding',
+    packages=['lib_detect_encoding'],
+    install_requires=['pytest', 'typing', 'chardet'],
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest'],
+
     description=description,
     long_description=long_description,
     long_description_content_type='text/x-rst',
     author='Robert Nowotny',
     author_email='rnowotny1966@gmail.com',
-    url='https://github.com/bitranox/lib_detect_encoding',
-    packages=['lib_detect_encoding'],
-    install_requires=['pytest', 'typing'],
     classifiers=CLASSIFIERS,
-    setup_requires=['pytest-runner'],
-    tests_require=['pytest'])
+    )
+
+# install_requires: what other distributions need to be installed when this one is.
+# setup_requires: what other distributions need to be present in order for the setup script to run
+# tests_require: If your project’s tests need one or more additional packages besides those needed to install it,
+#                you can use this option to specify them
