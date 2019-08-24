@@ -109,11 +109,10 @@ Requirements
 ------------
 following modules will be automatically installed :
 
-.. code-block:: shell
+.. code-block:: bash
 
-    pytest                                                            # see : https://github.com/pytest-dev/pytest
-    typing                                                            # see : https://pypi.org/project/typing/
-    https://github.com/bitranox/lib_platform/archive/master.zip       # see : https://github.com/bitranox/lib_platform
+    chardet                                                           # see : https://pypi.org/project/chardet/
+    git+https://github.com/bitranox/lib_platform.git                  # see : https://github.com/bitranox/lib_platform
 
 Acknowledgements
 ----------------

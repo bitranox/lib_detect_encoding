@@ -5,8 +5,18 @@ import subprocess
 import sys
 
 
-def install(package):
-    subprocess.call([sys.executable, "-m", "pip", "install", "--upgrade", package])
+def install_requirements_when_using_setup_py():
+    proc = subprocess.Popen([sys.executable, "-m", "pip", "install", '-r', './requirements_setup.txt'],
+                            stdin=subprocess.PIPE,
+                            stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE)
+    stdout, stderr = proc.communicate()
+    encoding = sys.getdefaultencoding()
+    print(stdout.decode(encoding))
+    print(stderr.decode(encoding))
+
+    if proc.returncode != 0:
+        raise RuntimeError('Error installing requirements_setup.txt')
 
 
 try:
@@ -38,25 +48,23 @@ if os.path.exists(readme_filename):
     except Exception:
         pass
 
-install('https://github.com/bitranox/lib_platform/archive/master.zip')
+install_requirements_when_using_setup_py()
 
 setup(
     name='lib_detect_encoding',
     version='0.0.1',
     url='https://github.com/bitranox/lib_detect_encoding',
     packages=['lib_detect_encoding'],
-    install_requires=['pytest', 'typing', 'chardet'],
-    setup_requires=['pytest-runner'],
-    tests_require=['pytest'],
-
     description=description,
     long_description=long_description,
     long_description_content_type='text/x-rst',
     author='Robert Nowotny',
     author_email='rnowotny1966@gmail.com',
-    classifiers=CLASSIFIERS)
-
-# install_requires: what other distributions need to be installed when this one is.
-# setup_requires: what other distributions need to be present in order for the setup script to run
-# tests_require: If your project’s tests need one or more additional packages besides those needed to install it,
-#                you can use this option to specify them
+    classifiers=CLASSIFIERS,
+    # specify what a project minimally needs to run correctly
+    install_requires=['chardet', 'lib_platform'],
+    # minimally needs to run the setup script, dependencies needs also to put here for setup.py install test
+    setup_requires=['pytest-runner', 'chardet', 'lib_platform'],
+    # minimally needs to run tests
+    tests_require=['pytest']
+    )
