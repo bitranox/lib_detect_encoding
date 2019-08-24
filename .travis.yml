@@ -64,6 +64,10 @@ matrix:
 
     - os: linux
       language: python
+      python: '3.8-dev'
+
+    - os: linux
+      language: python
       python: 'pypy3'
 
     - os: linux
