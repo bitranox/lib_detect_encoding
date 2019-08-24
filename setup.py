@@ -50,21 +50,20 @@ if os.path.exists(readme_filename):
 
 install_requirements_when_using_setup_py()
 
-setup(
-    name='lib_detect_encoding',
-    version='0.0.1',
-    url='https://github.com/bitranox/lib_detect_encoding',
-    packages=['lib_detect_encoding'],
-    description=description,
-    long_description=long_description,
-    long_description_content_type='text/x-rst',
-    author='Robert Nowotny',
-    author_email='rnowotny1966@gmail.com',
-    classifiers=CLASSIFIERS,
-    # specify what a project minimally needs to run correctly
-    install_requires=['chardet', 'lib_platform'],
-    # minimally needs to run the setup script, dependencies needs also to put here for setup.py install test
-    setup_requires=['pytest-runner', 'chardet', 'lib_platform'],
-    # minimally needs to run tests
-    tests_require=['pytest']
-    )
+setup(name='lib_detect_encoding',
+      version='0.0.1',
+      url='https://github.com/bitranox/lib_detect_encoding',
+      packages=['lib_detect_encoding'],
+      description=description,
+      long_description=long_description,
+      long_description_content_type='text/x-rst',
+      author='Robert Nowotny',
+      author_email='rnowotny1966@gmail.com',
+      classifiers=CLASSIFIERS,
+      # specify what a project minimally needs to run correctly
+      install_requires=['chardet', 'lib_platform'],
+      # minimally needs to run the setup script, dependencies needs also to put here for setup.py install test
+      setup_requires=['pytest-runner', 'chardet', 'lib_platform'],
+      # minimally needs to run tests
+      tests_require=['pytest']
+      )
