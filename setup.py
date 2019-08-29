@@ -8,14 +8,15 @@ try:
 except ImportError:
     from distutils.core import setup
 
-package_name = 'lib_regexp'
-required: List = list()
-required_for_tests: List = list()
-entry_points: Dict = dict()
+package_name = 'lib_detect_encoding'                                                # type: str
+required = ['lib_platform @ git+https://github.com/bitranox/lib_platform.git',
+            'chardet']                                                              # type: List
+required_for_tests = list()                                                         # type: List
+entry_points = dict()                                                               # type: Dict
 
 
 def get_version(dist_directory: str) -> str:
-    with open(pathlib.Path(__file__).parent / '{dist_directory}/version.txt'.format(dist_directory=dist_directory), mode='r') as version_file:
+    with open(str(pathlib.Path(__file__).parent / '{dist_directory}/version.txt'.format(dist_directory=dist_directory)), mode='r') as version_file:
         version = version_file.readline()
     return version
 
@@ -65,7 +66,8 @@ setup(name=package_name,
       # specify what a project minimally needs to run correctly
       install_requires=['typing', 'pathlib'] + required + required_for_tests,
       # minimally needs to run the setup script, dependencies needs also to put here for setup.py install test
+      # dependencies must not be put here for pip install
       setup_requires=['typing',
                       'pathlib',
-                      'pytest-runner'] + required
+                      'pytest-runner']
       )

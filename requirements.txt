@@ -12,4 +12,4 @@ pytest-runner
 
 ## Project Requirements
 chardet
-git+https://github.com/bitranox/lib_platform.git
+lib_platform @ git+https://github.com/bitranox/lib_platform.git
