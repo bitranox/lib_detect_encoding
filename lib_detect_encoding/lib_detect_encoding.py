@@ -82,6 +82,8 @@ def get_encoding_windows() -> str:
     if lib_platform.is_platform_windows_wine:   # no chcp command on wine
         logger.warning('assume wine encoding cp850')
         chcp_response = '850'
+    elif lib_platform.is_platform_posix:        # we called a wine program on linux probably
+        chcp_response = '850'
     else:
         my_process = subprocess.Popen(['chcp'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         stdout, stderr = my_process.communicate()
