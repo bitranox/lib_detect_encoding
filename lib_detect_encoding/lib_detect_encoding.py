@@ -5,10 +5,10 @@ import platform
 import subprocess
 
 # EXTLIB
-import chardet   # type: ignore
+import chardet          # type: ignore
 
 # OWNLIB
-import lib_platform
+import lib_platform     # type: ignore
 
 
 def _disable_chardet_confidence_logging() -> None:

@@ -212,6 +212,8 @@ matrix:
 
 
 install:
+    - ${pip_command} install git+https://github.com/bitranox/lib_log_utils.git;
+    - ${pip_command} install git+https://github.com/bitranox/rst_include.git;
     # install lib_bash_wine - this installs also lib_bash
     - $(command -v sudo 2>/dev/null) git clone https://github.com/bitranox/lib_bash_wine.git /usr/local/lib_bash_wine
     - $(command -v sudo 2>/dev/null) chmod -R 0755 /usr/local/lib_bash_wine

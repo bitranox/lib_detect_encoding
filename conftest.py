@@ -1,10 +1,11 @@
 import platform
 import sys
+from typing import List
 
-collect_ignore = ['build_docs.py', '__main__.py']
+# collect_ignore = ['build_docs.py', '__main__.py']
 
 
-def pytest_cmdline_preparse(args):
+def pytest_cmdline_preparse(args: List[str]) -> None:
     """
     # run tests on multiple processes if pytest-xdist plugin is available
     # unfortunately it does not work with codecov

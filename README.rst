@@ -71,11 +71,11 @@ via pip latest Development Version:
 .. code-block:: bash
 
     # upgrade all dependencies regardless of version number (PREFERRED)
-    pip install --upgrade https://github.com/bitranox/lib_detect_encoding/archive/master.zip --upgrade-strategy eager
+    pip install --upgrade git+https://github.com/bitranox/lib_detect_encoding.git --upgrade-strategy eager
     # normal install
-    pip install --upgrade https://github.com/bitranox/lib_detect_encoding/archive/master.zip
+    pip install --upgrade git+https://github.com/bitranox/lib_detect_encoding.git
     # test without installing
-    pip install https://github.com/bitranox/lib_detect_encoding/archive/master.zip --install-option test
+    pip install git+https://github.com/bitranox/lib_detect_encoding.git --install-option test
 
 via requirements.txt:
 
@@ -85,7 +85,7 @@ via requirements.txt:
     # for the latest Release:
     lib_detect_encoding
     # for the latest Development Version :
-    https://github.com/bitranox/lib_detect_encoding/archive/master.zip
+    git+https://github.com/bitranox/lib_detect_encoding.git
 
     # to install and upgrade all modules mentioned in requirements.txt:
     pip install --upgrade -r /<path>/requirements.txt
@@ -98,7 +98,7 @@ via python:
     python -m pip install upgrade lib_detect_encoding
 
     # for the latest Development Version
-    python -m pip install upgrade https://github.com/bitranox/lib_detect_encoding/archive/master.zip
+    python -m pip install upgrade git+https://github.com/bitranox/lib_detect_encoding.git
 
 Basic Usage
 -----------
@@ -111,8 +111,22 @@ following modules will be automatically installed :
 
 .. code-block:: bash
 
-    chardet                                                           # see : https://pypi.org/project/chardet/
-    git+https://github.com/bitranox/lib_platform.git                  # see : https://github.com/bitranox/lib_platform
+    ## Test Requirements
+    ## following Requirements will be installed temporarily for
+    ## "setup.py install test" or "pip install <package> --install-option test"
+    docopt
+    typing ; python_version < "3.5"
+    pathlib; python_version < "3.4"
+    mypy ; platform_python_implementation != "PyPy" and python_version >= "3.5"
+    pytest
+    pytest-pep8 ; python_version < "3.5"
+    pytest-codestyle ; python_version >= "3.5"
+    pytest-mypy ; platform_python_implementation != "PyPy" and python_version >= "3.5"
+    pytest-runner
+
+    ## Project Requirements
+    chardet
+    lib_platform @ git+https://github.com/bitranox/lib_platform.git
 
 Acknowledgements
 ----------------
