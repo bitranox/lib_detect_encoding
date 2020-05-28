@@ -4,10 +4,10 @@ import logging
 import platform
 import subprocess
 
-# EXTLIB
+# EXT
 import chardet          # type: ignore
 
-# OWNLIB
+# OWN
 import lib_platform     # type: ignore
 
 
