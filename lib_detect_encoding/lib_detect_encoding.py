@@ -42,7 +42,7 @@ def get_encoding() -> str:
     elif lib_platform.is_platform_windows:
         return get_encoding_windows()
     else:
-        raise RuntimeError('Operating System {} not supported'.format(platform.system()))
+        raise RuntimeError(f'Operating System {platform.system()} not supported')
 
 
 def get_encoding_linux() -> str:
