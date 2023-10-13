@@ -1,9 +1,16 @@
+# see: https://coverage.readthedocs.io/en/v4.5.x/config.html
+
 [run]
-source  = lib_detect_encoding
-include = lib_detect_encoding/*
+
+# see: https://coverage.readthedocs.io/en/v4.5.x/source.html#source
 
 # (boolean, default False): whether to measure branch coverage in addition to statement coverage
 branch  = True
+
+omit =
+    venv/*
+    tests/*
+    setup.py
 
 
 [report]

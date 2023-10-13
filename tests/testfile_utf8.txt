@@ -1,0 +1,6 @@
+Dies ist ein deutscher Text UTF-8 codiert. ÖÄÜ{}@€
+Dies ist ein deutscher Text UTF-8 codiert. ÖÄÜ{}@€
+Dies ist ein deutscher Text UTF-8 codiert. ÖÄÜ{}@€
+öäüß/&%$§"
+#'
+|<>

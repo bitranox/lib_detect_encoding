@@ -1,38 +1,42 @@
 lib_detect_encoding
 ===================
 
-.. include:: ./badges_without_jupyter.rst
 
-some convenience functions for encoding detection
+Version v1.0.0 as of 2023-10-13 see `Changelog`_
 
-supports python 3.7 and possibly other dialects.
 
+.. include:: ./badges.rst
+
+.. include:: ./description.rst
+
+----
+
+automated tests, Github Actions, Documentation, Badges, etc. are managed with `PizzaCutter <https://github
+.com/bitranox/PizzaCutter>`_ (cookiecutter on steroids)
+
+Python version required: 3.8.0 or newer
 
 .. include:: ./tested_under.rst
 
 ----
 
-- `Installation and Upgrade`_
-- `Basic Usage`_
-- `Requirements`_
-- `Acknowledgements`_
-- `Contribute`_
-- `Report Issues <https://github.com/{repository_slug}/blob/master/ISSUE_TEMPLATE.md>`_
-- `Pull Request <https://github.com/{repository_slug}/blob/master/PULL_REQUEST_TEMPLATE.md>`_
-- `Code of Conduct <https://github.com/{repository_slug}/blob/master/CODE_OF_CONDUCT.md>`_
-- `License`_
-- `Changelog`_
+.. include:: ./index.rst
 
 ----
+
+.. include:: ./try_in_jupyter.rst
+
+Usage
+-----------
+.. include:: ./usage.rst
+
+Usage from Commandline
+------------------------
+.. include:: ./commandline_help.rst
 
 Installation and Upgrade
 ------------------------
 .. include:: ./installation.rst
-
-
-Basic Usage
------------
-.. include:: ./basic_usage.rst
 
 Requirements
 ------------
