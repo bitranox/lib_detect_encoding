@@ -1,6 +1,6 @@
 ## Project Requirements
+chardet
 click
 cli_exit_tools
-chardet
 lib_log_utils
 lib_platform
