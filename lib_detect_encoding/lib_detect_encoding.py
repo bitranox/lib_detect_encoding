@@ -315,8 +315,8 @@ def get_system_preferred_encoding() -> str:
         return get_system_preferred_encoding_posix()
     elif lib_platform.is_platform_windows:
         return get_system_preferred_encoding_windows()
-    else:
-        raise RuntimeError(f'Operating System {platform.system()} not supported')
+    else:   # pragma: no cover
+        raise RuntimeError(f'Operating System {platform.system()} not supported')   # pragma: no cover
 
 
 def get_system_preferred_encoding_posix() -> str:
@@ -340,18 +340,18 @@ def get_system_preferred_encoding_windows() -> str:
 
     preferred_os_encoding = locale.getpreferredencoding()
 
-    if lib_platform.is_platform_windows_wine:   # no chcp command on wine
-        lib_log_utils.log_warning('assuming encoding cp850 for WINE')
-        chcp_response = '850'
+    if lib_platform.is_platform_windows_wine:   # pragma: no cover # no chcp command on wine
+        lib_log_utils.log_warning('assuming encoding cp850 for WINE')   # pragma: no cover
+        chcp_response = '850'                                           # pragma: no cover
     elif lib_platform.is_platform_posix:        # we called a wine program on linux probably
         chcp_response = '850'
     elif lib_platform.is_platform_windows:
         my_process = subprocess.Popen(['chcp'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         stdout, stderr = my_process.communicate()
         chcp_response = stdout.decode(preferred_os_encoding)
-    else:
-        lib_log_utils.log_warning('assuming encoding utf_8 for unknown operating system')
-        chcp_response = 'utf_8'
+    else:   # pragma: no cover
+        lib_log_utils.log_warning('assuming encoding utf_8 for unknown operating system')   # pragma: no cover
+        chcp_response = 'utf_8'  # pragma: no cover
 
     chcp_response_simple = _simplify_codec_name(chcp_response)
 
@@ -389,8 +389,8 @@ def get_language_by_codec_name(codec_name: str) -> str:
         raise KeyError(f'codec "{codec_name}" not found')
     try:
         language = codec_languages[python_codec_name]
-    except KeyError:
-        raise KeyError(f'language for codec "{python_codec_name}" not found')
+    except KeyError:    # pragma: no cover
+        raise KeyError(f'language for codec "{python_codec_name}" not found')   # pragma: no cover
     return language
 
 
