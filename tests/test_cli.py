@@ -25,7 +25,6 @@ def call_cli_command(commandline_args: str = '') -> bool:
 def test_cli_commands() -> None:
     """
     >>> test_cli_commands()
-
     """
     path_testfile = pathlib.Path(__file__).parent / 'testfile_utf8.txt'
     assert not call_cli_command('--unknown_option')
@@ -51,3 +50,5 @@ def test_cli_commands() -> None:
 
     # test get language
     assert call_cli_command('get_language cp865')
+    # test get language with missing parameter
+    assert call_cli_command('get_language')
