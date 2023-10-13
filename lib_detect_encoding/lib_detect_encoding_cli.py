@@ -48,7 +48,7 @@ def cli_info() -> None:
 
 
 @cli_main.command('get_system_preferred_encoding', context_settings=CLICK_CONTEXT_SETTINGS)      # type: ignore
-def cli_info() -> None:
+def cli_get_system_preferred_encoding() -> None:
     """ get the system preferred encoding """
     print(lib_detect_encoding.get_system_preferred_encoding())
 
@@ -59,11 +59,11 @@ def cli_get_file_encoding(filename) -> None:
     """ get encoding from a (text)file """
 
     """
-    Note on Non-Empty Variadic Arguments : 
+    Note on Non-Empty Variadic Arguments :
     If you come from argparse, you might be missing support for setting nargs to + to indicate that at least one argument is required.
-    This is supported by setting required=True. However, this should not be used if you can avoid it as we believe scripts should gracefully 
-    degrade into becoming noops if a variadic argument is empty. 
-    The reason for this is that very often, scripts are invoked with wildcard inputs from the command line 
+    This is supported by setting required=True. However, this should not be used if you can avoid it as we believe scripts should gracefully
+    degrade into becoming noops if a variadic argument is empty.
+    The reason for this is that very often, scripts are invoked with wildcard inputs from the command line
     and they should not error out if the wildcard is empty.
     """
     if filename:
@@ -77,11 +77,11 @@ def cli_get_language_by_codec_name(codec_name: str) -> None:
     """ get the language from a codec name """
 
     """
-    Note on Non-Empty Variadic Arguments : 
+    Note on Non-Empty Variadic Arguments :
     If you come from argparse, you might be missing support for setting nargs to + to indicate that at least one argument is required.
-    This is supported by setting required=True. However, this should not be used if you can avoid it as we believe scripts should gracefully 
-    degrade into becoming noops if a variadic argument is empty. 
-    The reason for this is that very often, scripts are invoked with wildcard inputs from the command line 
+    This is supported by setting required=True. However, this should not be used if you can avoid it as we believe scripts should gracefully
+    degrade into becoming noops if a variadic argument is empty.
+    The reason for this is that very often, scripts are invoked with wildcard inputs from the command line
     and they should not error out if the wildcard is empty.
     """
     if codec_name:

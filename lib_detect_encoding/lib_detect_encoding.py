@@ -25,7 +25,7 @@ codec_aliases = {"ascii": "ascii", "646": "ascii" , "us_ascii": "ascii",  # Engl
                  "cp273": "cp273", "273": "cp273", "ibm273": "cp273", "csibm273": "cp273",  # German
                  "cp424": "cp424", "ebcdic_cp_he": "cp424", "ibm424": "cp424", "424": "cp424",  # Hebrew
                  "cp437": "cp437", "437": "cp437", "ibm437": "cp437",  # English, United States
-                 "cp500": "cp500", "ebcdic_cp_be": "cp500", "ebcdic_cp_ch": "cp500", "ibm500": "cp500",  "500": "cp500",  # Western Europe
+                 "cp500": "cp500", "ebcdic_cp_be": "cp500", "ebcdic_cp_ch": "cp500", "ibm500": "cp500", "500": "cp500",  # Western Europe
                  "cp720": "cp720", "720": "cp720",  # Arabic
                  "cp737": "cp737", "737": "cp737",  # Greek
                  "cp775": "cp775", "ibm775": "cp775", "775": "cp775",  # Baltic languages
@@ -136,7 +136,7 @@ codec_aliases_relaxed = {"ascii": "ascii", "646": "ascii" , "usascii": "ascii", 
                          "cp273": "cp273", "273": "cp273", "ibm273": "cp273", "csibm273": "cp273",  # German
                          "cp424": "cp424", "ebcdiccphe": "cp424", "ibm424": "cp424", "424": "cp424",  # Hebrew
                          "cp437": "cp437", "437": "cp437", "ibm437": "cp437",  # English, United States
-                         "cp500": "cp500", "ebcdiccpbe": "cp500", "ebcdiccpch": "cp500", "ibm500": "cp500",  "500": "cp500",  # Western Europe
+                         "cp500": "cp500", "ebcdiccpbe": "cp500", "ebcdiccpch": "cp500", "ibm500": "cp500", "500": "cp500",  # Western Europe
                          "cp720": "cp720", "720": "cp720",  # Arabic
                          "cp737": "cp737", "737": "cp737",  # Greek
                          "cp775": "cp775", "ibm775": "cp775", "775": "cp775",  # Baltic languages

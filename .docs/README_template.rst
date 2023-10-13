@@ -2,7 +2,7 @@ lib_detect_encoding
 ===================
 
 
-Version v1.0.0 as of 2023-10-13 see `Changelog`_
+Version v1.0.0 as of 2023-10-14 see `Changelog`_
 
 
 .. include:: ./badges.rst
