@@ -1,1 +1,3 @@
-put your description of the project under .docs/description.rst
+- detects the encoding of textfiles
+- detects the system preferred encoding
+- returns the language (if possible) for a given encoding

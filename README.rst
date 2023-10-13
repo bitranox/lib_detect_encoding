@@ -2,7 +2,7 @@ lib_detect_encoding
 ===================
 
 
-Version v1.0.0 as of 2023-10-14 see `Changelog`_
+Version v1.0.1 as of 2023-10-14 see `Changelog`_
 
 |build_badge| |codeql| |license| |jupyter| |pypi|
 |pypi-downloads| |black| |codecov| |cc_maintain| |cc_issues| |cc_coverage| |snyk|
@@ -54,7 +54,9 @@ Version v1.0.0 as of 2023-10-14 see `Changelog`_
    :target: https://pypi.org/project/lib-detect-encoding/
    :alt: PyPI - Downloads
 
-put your description of the project under .docs/description.rst
+- detects the encoding of textfiles
+- detects the system preferred encoding
+- returns the language (if possible) for a given encoding
 
 ----
 
@@ -277,6 +279,11 @@ This software is licensed under the `MIT license <http://en.wikipedia.org/wiki/M
 
 Changelog
 =========
+
+v1.0.1
+--------
+2023-10-14:
+    - update documentation
 
 v1.0.0
 --------

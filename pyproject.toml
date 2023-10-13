@@ -32,7 +32,7 @@ dependencies = [
     "lib_log_utils",
     "lib_platform",
 ]
-version = "v1.0.0"
+version = "v1.0.1"
 # seems to be not allowed anymore
 # zip-save = false
 
