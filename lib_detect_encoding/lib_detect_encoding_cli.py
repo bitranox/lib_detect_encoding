@@ -72,7 +72,7 @@ def cli_get_file_encoding(filename) -> None:
 
 
 @cli_main.command('get_language', context_settings=CLICK_CONTEXT_SETTINGS)      # type: ignore
-@click.argument('codec_name', type=click.STRING)
+@click.argument('codec_name', type=click.STRING, required=False)
 def cli_get_language_by_codec_name(codec_name: str) -> None:
     """ get the language from a codec name """
 
