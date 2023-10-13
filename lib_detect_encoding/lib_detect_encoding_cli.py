@@ -54,7 +54,7 @@ def cli_get_system_preferred_encoding() -> None:
 
 
 @cli_main.command('get_file_encoding', context_settings=CLICK_CONTEXT_SETTINGS)      # type: ignore
-@click.argument('filename', type=click.Path(exists=True))
+@click.argument('filename', type=click.Path(exists=True), required=False)
 def cli_get_file_encoding(filename) -> None:
     """ get encoding from a (text)file """
 

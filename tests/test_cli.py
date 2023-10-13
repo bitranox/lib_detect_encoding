@@ -34,4 +34,20 @@ def test_cli_commands() -> None:
     assert call_cli_command('info')
     assert call_cli_command('--traceback info')
     assert call_cli_command('get_system_preferred_encoding')
+    # test with parameter
     assert call_cli_command(f'get_file_encoding {path_testfile}')
+    # test with wrong parameter
+    assert not call_cli_command('get_file_encoding unknown.txt')
+    # test with missing parameter --> NOOP
+    """
+    Note on Non-Empty Variadic Arguments :
+    If you come from argparse, you might be missing support for setting nargs to + to indicate that at least one argument is required.
+    This is supported by setting required=True. However, this should not be used if you can avoid it as we believe scripts should gracefully
+    degrade into becoming noops if a variadic argument is empty.
+    The reason for this is that very often, scripts are invoked with wildcard inputs from the command line
+    and they should not error out if the wildcard is empty.
+    """
+    assert call_cli_command('get_file_encoding')
+
+    # test get language
+    assert call_cli_command('get_language cp865')
