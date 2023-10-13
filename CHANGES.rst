@@ -3,7 +3,7 @@ Changelog
 
 v1.0.0
 --------
-2023-10-13:
+2023-10-14:
     - create mypy cache dir '.mypy_cache'
     - require minimum python 3.8
     - remove python 3.7 tests
