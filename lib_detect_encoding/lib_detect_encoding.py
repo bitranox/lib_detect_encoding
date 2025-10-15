@@ -317,9 +317,9 @@ def get_system_preferred_encoding() -> str:
     see: https://docs.python.org/3/library/codecs.html#standard-encodings
     """
     # get_system_preferred_encoding}}}
-    if lib_platform.is_platform_posix:
+    if lib_platform.get_is_platform_posix():
         return get_system_preferred_encoding_posix()
-    elif lib_platform.is_platform_windows:
+    elif lib_platform.get_is_platform_windows():
         return get_system_preferred_encoding_windows()
     else:   # pragma: no cover
         raise RuntimeError(f'Operating System {platform.system()} not supported')   # pragma: no cover
@@ -346,12 +346,12 @@ def get_system_preferred_encoding_windows() -> str:
 
     preferred_os_encoding = locale.getpreferredencoding()
 
-    if lib_platform.is_platform_windows_wine:   # pragma: no cover # no chcp command on wine
+    if lib_platform.get_is_platform_windows_wine():   # pragma: no cover # no chcp command on wine
         log.warning('assuming encoding cp850 for WINE')   # pragma: no cover
         chcp_response = '850'                                           # pragma: no cover
-    elif lib_platform.is_platform_posix:        # we called a wine program on linux probably
+    elif lib_platform.get_is_platform_posix():        # we called a wine program on linux probably
         chcp_response = '850'
-    elif lib_platform.is_platform_windows:
+    elif lib_platform.get_is_platform_windows():
         my_process = subprocess.Popen(['chcp'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         stdout, stderr = my_process.communicate()
         chcp_response = stdout.decode(preferred_os_encoding)
