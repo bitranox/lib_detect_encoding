@@ -8,12 +8,7 @@ import sys
 # EXT
 import chardet
 
-# ENSURE LOGGER - shoud be already initialized by caller
-import lib_log_rich.runtime
-import ensure_richlog
-ensure_richlog.ensure_richlog(service="lib_detect_encoding", environment="submodule", queue_enabled=True)
-log: lib_log_rich.runtime.LoggerProxy = lib_log_rich.get("lib_detect_encoding")
-
+logger = logging.getLogger(__name__)
 
 # OWN
 import lib_platform
@@ -303,7 +298,7 @@ def get_file_encoding(raw_bytes: bytes) -> str:
     # locale.getpreferredencoding sometimes reports cp1252, but is cp850, so check with chcp
     if confidence < 0.95:
         encoding = get_system_preferred_encoding()
-        log.warning(f'can not detect encoding from raw_bytes, returning system default encoding: {encoding}')
+        logger.warning(f'can not detect encoding from raw_bytes, returning system default encoding: {encoding}')
 
     return encoding
 
@@ -347,7 +342,7 @@ def get_system_preferred_encoding_windows() -> str:
     preferred_os_encoding = locale.getpreferredencoding()
 
     if lib_platform.get_is_platform_windows_wine():   # pragma: no cover # no chcp command on wine
-        log.warning('assuming encoding cp850 for WINE')   # pragma: no cover
+        logger.warning('assuming encoding cp850 for WINE')   # pragma: no cover
         chcp_response = '850'                                           # pragma: no cover
     elif lib_platform.get_is_platform_posix():        # we called a wine program on linux probably
         chcp_response = '850'
@@ -356,7 +351,7 @@ def get_system_preferred_encoding_windows() -> str:
         stdout, stderr = my_process.communicate()
         chcp_response = stdout.decode(preferred_os_encoding)
     else:   # pragma: no cover
-        log.warning('assuming encoding utf_8 for unknown operating system')   # pragma: no cover
+        logger.warning('assuming encoding utf_8 for unknown operating system')   # pragma: no cover
         chcp_response = 'utf_8'  # pragma: no cover
 
     chcp_response_simple = _simplify_codec_name(chcp_response)
@@ -364,8 +359,8 @@ def get_system_preferred_encoding_windows() -> str:
     if chcp_response_simple in codec_aliases_relaxed:
         return codec_aliases_relaxed[chcp_response_simple]
 
-    log.warning(f'can not find the chcp response "{chcp_response}" in my list of valid encodings')
-    log.warning('can not detect windows encoding with chcp, assuming cp850')
+    logger.warning(f'can not find the chcp response "{chcp_response}" in my list of valid encodings')
+    logger.warning('can not detect windows encoding with chcp, assuming cp850')
     return 'cp850'
 
 
