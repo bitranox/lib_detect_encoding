@@ -4,3 +4,4 @@ click
 cli_exit_tools
 lib_log_utils
 lib_platform
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
